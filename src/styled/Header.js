@@ -17,7 +17,7 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-evenly;
   width: 25em;
-  
+  align-items: center;  
 `
 export const StyledLink = styled(Link)`
   text-decoration: none;

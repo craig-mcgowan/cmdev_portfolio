@@ -7,7 +7,7 @@ function NavBar() {
     <Header>
       <h1>Craig McGowan</h1>
       <Nav>
-          <StyledLink to='/about/' >About</StyledLink>
+          <StyledLink to='/' >About</StyledLink>
           <StyledLink to='/projects/'>Projects</StyledLink>
           <StyledLink to='/contact/'>Contact</StyledLink>
 
