@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
-  /* background-color: cyan */
+  margin-top: 4rem;
+  padding-top: 10px;
+  background-color: cyan
 `
