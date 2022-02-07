@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
-  margin-top: 4rem;
-  padding-top: 10px;
-  background-color: cyan
+  padding: 4rem 0 0 0;
+  background-color: cyan;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 `

@@ -4,10 +4,19 @@ import { projects } from "../data/projects";
 import { Main } from "../styled/Main";
 
 export default function Projects() {
+
+  /*----------------------------------
+     Style Objects
+  ----------------------------------*/
+  const projectContainer = {
+    width: '80%',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+  }
   
   const ProjectCards = projects
     .map(project => (
-      <section>
+      <section style={projectContainer}>
         <h3>{project.name}</h3>
         <img src={project.image} alt={project.name} />
         <a href={project.link} target="_blank" >View Live</a>
@@ -21,11 +30,7 @@ export default function Projects() {
 
   return (
     <Layout>
-      <Main>
-
       {ProjectCards}
-      </Main>
-      
     </Layout>
   );
 }
