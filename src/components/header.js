@@ -4,78 +4,54 @@ import { GiHamburgerMenu } from '@react-icons/all-files/gi/GiHamburgerMenu'
 import {GoX} from '@react-icons/all-files/go/GoX'
 import { Link } from 'gatsby';
 import { useState } from 'react';
+import * as headerStyles from './header.module.scss'
 
 
 function NavBar() {
+  const [navClosed, setNavClosed] = useState(true)
   /*----------------------------------
      Style Objects
   ----------------------------------*/
   
-  const navClosed = {
-    height: "0px"
-  }
+  const dropMenu = navClosed? headerStyles.closed : headerStyles.open
   
-  const navOpen = {
-    height: 'min-content',
-    position: 'relative',
-    top: '4rem'
-  }
+  
 
   const linkStyle = {
     display: 'block',
     width: '100%',
     textDecoration: 'none',
   }
-
   
   
-  
-  const [navStatus, setNavStatus] = useState(
-    {
-      closed: true,
-      style: navClosed,
-      navIcon: GiHamburgerMenu
-    })
-  
-  const Toggler = navStatus.navIcon
+  const Toggler = navClosed? GiHamburgerMenu : GoX
   
   const handleToggleMenu= () => {  
-    setNavStatus(
-      navStatus.closed ?
-        {
-          closed: false,
-          style: navOpen,
-          navIcon: GoX,
-        } :
-        {
-          closed: true,
-          style: navClosed,
-          navIcon: GiHamburgerMenu
-        }  
-    )
+    setNavClosed(!navClosed)
+    console.log(dropMenu);
   }
-    
-  
 
   return (
     <>
-      <Header>
+      <header className={headerStyles.header}>
         <h1>Craig McGowan</h1>
         <Nav>
           <StyledLink to="/">About</StyledLink>
           <StyledLink to="/projects/">Projects</StyledLink>
           <StyledLink to="/contact/">Contact</StyledLink>
-          <div onClick={()=>handleToggleMenu()}><Toggler/></div>
+          <div onClick={() => handleToggleMenu()}>
+            <Toggler />
+          </div>
         </Nav>
-      </Header>
-      <nav className="drop-menu" style={navStatus.style}>
-        <Link style={linkStyle} to="/">
+      </header>
+      <nav className={dropMenu}>
+        <Link className={headerStyles.mobile} to="/">
           About
         </Link>
-        <Link style={linkStyle} to="/projects/">
+        <Link className={headerStyles.mobile} to="/projects/">
           Projects
         </Link>
-        <Link style={linkStyle} to="/contact/">
+        <Link className={headerStyles.mobile} to="/contact/">
           Contact
         </Link>
       </nav>

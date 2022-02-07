@@ -1,0 +1,65 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  height: 4rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: purple;
+  color: white;
+  box-sizing: border-box;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: space-evenly;
+  width: max-content;
+  align-items: center; 
+  margin-right: 1rem; 
+}
+
+.desktop {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+  display: none;
+  :hover {
+    color: green;
+  }
+  @media only screen and (min-width:600px) {
+    display: initial
+  }
+}
+
+.mobile {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+
+}
+
+.open{
+  position: relative;
+  top: 4rem;
+  height: min-content;
+}
+
+.closed {
+  position: relative;
+  top: 4rem;
+  height: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.hamburger {
+  width: min-content;
+}
+
+// @media only screen and (min-width:600px) {
+//   nav.drop-menu {
+//     display: none
+//   }
+// }
