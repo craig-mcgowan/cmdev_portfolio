@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header, Nav, StyledLink } from '../styled/Header'
 import { GiHamburgerMenu } from '@react-icons/all-files/gi/GiHamburgerMenu'
+import {GoX} from '@react-icons/all-files/go/GoX'
 import { Link } from 'gatsby';
 import { useState } from 'react';
 
@@ -26,16 +27,35 @@ function NavBar() {
     textDecoration: 'none',
   }
 
-
   
-  const [navStatus, setNavStatus] = useState(navClosed)
   
-  const handleToggleMenu= () => {
+  
+  const [navStatus, setNavStatus] = useState(
+    {
+      closed: true,
+      style: navClosed,
+      navIcon: GiHamburgerMenu
+    })
+  
+  const Toggler = navStatus.navIcon
+  
+  const handleToggleMenu= () => {  
     setNavStatus(
-      navStatus.height === "0px" ? navOpen : navClosed
+      navStatus.closed ?
+        {
+          closed: false,
+          style: navOpen,
+          navIcon: GoX,
+        } :
+        {
+          closed: true,
+          style: navClosed,
+          navIcon: GiHamburgerMenu
+        }  
     )
-    console.log(navStatus)
   }
+    
+  
 
   return (
     <>
@@ -45,10 +65,10 @@ function NavBar() {
           <StyledLink to="/">About</StyledLink>
           <StyledLink to="/projects/">Projects</StyledLink>
           <StyledLink to="/contact/">Contact</StyledLink>
-          <GiHamburgerMenu onClick={() => handleToggleMenu()} />
+          <div onClick={()=>handleToggleMenu()}><Toggler/></div>
         </Nav>
       </Header>
-      <nav className="drop-menu" style={navStatus}>
+      <nav className="drop-menu" style={navStatus.style}>
         <Link style={linkStyle} to="/">
           About
         </Link>
