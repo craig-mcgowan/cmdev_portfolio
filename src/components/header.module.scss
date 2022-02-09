@@ -10,14 +10,41 @@
   background: purple;
   color: white;
   box-sizing: border-box;
+  font-family: 'Oxygen', sans-serif;
+  align-items: center;
+}
+
+.logoContainer {
+  min-width: max-content;
+  font-size: 1.5rem;
+}
+
+.logo {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-left: 3px;
+
 }
 
 .navLinks {
-  display: flex;
+
   justify-content: space-evenly;
   width: max-content;
   align-items: center; 
   margin-right: 1rem; 
+  text-decoration: none;
+  font-size: large;
+  font-weight: bold;
+  color: white;
+    display: none;
+  :hover {
+    color: green;
+  }
+  @media only screen and (min-width:600px) {
+    display: initial
+  }
+
 }
 
 .desktop {
@@ -37,7 +64,7 @@
   display: block;
   width: 100%;
   text-decoration: none;
-
+  
 }
 
 .open{
@@ -56,6 +83,9 @@
 
 .hamburger {
   width: min-content;
+  @media only screen and (min-width:600px) {
+    display: none
+  }
 }
 
 // @media only screen and (min-width:600px) {
