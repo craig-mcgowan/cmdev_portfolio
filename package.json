@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fontsource/oxygen": "^4.5.1",
     "@react-icons/all-files": "^4.1.0",
     "babel-plugin-styled-components": "^2.0.2",
     "framer-motion": "^6.2.4",

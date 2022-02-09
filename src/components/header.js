@@ -5,6 +5,7 @@ import {GoX} from '@react-icons/all-files/go/GoX'
 import { Link } from 'gatsby';
 import { useState } from 'react';
 import * as headerStyles from './header.module.scss'
+import { motion } from 'framer-motion';
 
 
 function NavBar() {
@@ -34,12 +35,35 @@ function NavBar() {
   return (
     <>
       <header className={headerStyles.header}>
-        <h1>Craig McGowan</h1>
+        <div className={headerStyles.logoContainer}>
+          <motion.span
+            className={headerStyles.logo}
+            animate={{ width: "15px" }}
+            transition={{ duration: .5}}
+            whileHover={{
+              "width": "max-content",
+              transition: { duration: 1 },
+            }}
+          >
+            Craig
+          </motion.span>
+          <motion.span
+            whileHover={{
+              "width": "max-content",
+              transition: { duration: 1 },
+            }}
+            className={headerStyles.logo}
+            animate={{ width: "21px" }}
+            transition={{ duration: .5 }}
+          >
+            McGowan
+          </motion.span>
+        </div>
         <Nav>
-          <StyledLink to="/">About</StyledLink>
-          <StyledLink to="/projects/">Projects</StyledLink>
-          <StyledLink to="/contact/">Contact</StyledLink>
-          <div onClick={() => handleToggleMenu()}>
+          <Link className= {headerStyles.navLinks} to="/">About</Link>
+          <Link className= {headerStyles.navLinks} to="/projects/">Projects</Link>
+          <Link className= {headerStyles.navLinks} to="/contact/">Contact</Link>
+          <div className={headerStyles.hamburger} onClick={() => handleToggleMenu()}>
             <Toggler />
           </div>
         </Nav>
