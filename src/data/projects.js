@@ -49,13 +49,14 @@ export const projects = [
   {
     name: "Vidster",
     tags: ["React", "React Router", "Node", "Express", "MongoDB", "Group"],
-    link: "https://mystifying-hermann-6ecd7b.netlify.app/",
+    link: "https://vidster.netlify.app/",
     frontendRepo: "https://github.com/dflores23/playlist-frontend",
     backendRepo: "https://github.com/dflores23/playlist-backend",
     image:
       "https://res.cloudinary.com/dm9ig1vtk/image/upload/v1644185217/Portfolio/2022-02-06_17.06.48_fpgqpf.png",
     vid: "https://res.cloudinary.com/dm9ig1vtk/video/upload/v1644185389/Portfolio/vidster_recording_gxu9jf.mov",
-    description: "A group project showcasing team git workflows, React and Express",
+    description:
+      "A group project showcasing team git workflows, React and Express",
   },
   {
     name: "BuildHub",
