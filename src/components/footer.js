@@ -1,5 +1,5 @@
 function Footer(props) {
   <div>
-    Footer
+    Craig McGowan 2022
   </div>
 }
