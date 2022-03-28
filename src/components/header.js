@@ -32,6 +32,10 @@ function NavBar() {
     console.log(dropMenu);
   }
 
+  /*----------------------------------
+     Returned JSX
+  ----------------------------------*/
+  
   return (
     <>
       <header className={headerStyles.header}>
